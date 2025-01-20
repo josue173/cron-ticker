@@ -10,11 +10,12 @@ WORKDIR /app
 # poner en la imagen y el destino
 # como escribí el comando WORKDIR puedo usar: ./
 # Pero de no haberlo hecho tendría que haber puesto: /app/
-COPY app.js package.json ./
+COPY package.json ./
 # En la imagen no va la carpeta de node_modules, la cuál contiene las dependencias
 # Como no se sube se tiene que correr el comando npm i, para reconstruir la carpeta o bien instalar las dependencias
 # De quere más comandos se coloca &&
 RUN npm install
+COPY app.js  ./
 # Ejecutar comando para correr la aplicación
 # Serie de instucciones a ejecutar
 CMD ["node", "app.js"]
