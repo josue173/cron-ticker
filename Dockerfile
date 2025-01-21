@@ -1,7 +1,11 @@
-
 # Por lo general el código estará basado en otra imagen
 # FROM es la imagen raíz, el punto de inicio
-FROM node:19.2-alpine3.16 
+# FROM node:19.2-alpine3.16 
+# --platform=linux/amd64 ES PARA UNA PLATAFORMA EN ESPECÍFICO
+# Para M1 y M2 respectivamente
+# FROM --platform=linux/amd64 node:19.2-alpine3.16
+# $BUILDPLATFORM Esta imagen en particular dependerá de las plataformas que la variable de entorno provea
+FROM --platform=$BUILDPLATFORM node:19.2-alpine3.16 
 # /app, esa es la carpeta en la que suele ponerse la imagen
 # Este comando es como hacer un cd..
 # La carpeta /app ya viene en Linux, las versiones alpaine son para linux
