@@ -13,7 +13,7 @@ WORKDIR /app
 # COPY package.json ./
 # -------------------------- #
 # El primer punto quiere decir que copie en el path actual
-# El segundo punto quiere decir que lo pege en el WORKING DIRECTORY
+# El segundo punto quiere decir que lo pege en el WORKING DIRECTORY (/app)
 # El problema es que esto copia los módulos de node
 COPY . .
 # En la imagen no va la carpeta de node_modules, la cuál contiene las dependencias
